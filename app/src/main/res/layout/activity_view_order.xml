@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewOrderActivity">
+
+    <TextView
+        android:id="@+id/textViewOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="22dp"
+        android:text="@string/title_view_order"
+        app:layout_constraintBottom_toTopOf="@+id/singleOrderListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/singleOrderListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="32dp"
+        android:choiceMode="singleChoice"
+        app:layout_constraintBottom_toTopOf="@+id/textOrderSubtotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_remove_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="action_remove_item"
+        android:text="@string/btn_remove_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit_order"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singleOrderListView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_submit_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:onClick="action_submit_order"
+        android:text="@string/btn_submit_order"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_remove_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_remove_item" />
+
+    <TextView
+        android:id="@+id/textOrderSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/order_subtotal"
+        app:layout_constraintBottom_toTopOf="@+id/textOrderTax"
+        app:layout_constraintStart_toStartOf="@+id/textOrderTotal"
+        app:layout_constraintTop_toBottomOf="@+id/singleOrderListView" />
+
+    <TextView
+        android:id="@+id/textOrderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="150dp"
+        android:text="@string/order_total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_remove_item"
+        app:layout_constraintTop_toBottomOf="@+id/textOrderTax" />
+
+    <TextView
+        android:id="@+id/textOrderTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/order_tax"
+        app:layout_constraintBottom_toTopOf="@+id/textOrderTotal"
+        app:layout_constraintStart_toStartOf="@+id/textOrderSubtotal"
+        app:layout_constraintTop_toBottomOf="@+id/textOrderSubtotal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

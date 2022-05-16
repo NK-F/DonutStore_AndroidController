@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderCoffeeActivity">
+
+    <TextView
+        android:id="@+id/textOrderCoffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="42dp"
+        android:text="@string/order_coffee_title"
+        app:layout_constraintBottom_toTopOf="@+id/textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/size"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/textAddIns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSize"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/size"
+        app:layout_constraintBottom_toTopOf="@+id/size"
+        app:layout_constraintEnd_toEndOf="@+id/textOrderCoffee"
+        app:layout_constraintTop_toBottomOf="@+id/textOrderCoffee" />
+
+    <CheckBox
+        android:id="@+id/option_add_cream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:onClick="action_select_add_in"
+        android:text="@string/cream"
+        app:layout_constraintBottom_toTopOf="@+id/option_add_syrup"
+        app:layout_constraintStart_toStartOf="@+id/size"
+        app:layout_constraintTop_toBottomOf="@+id/textAddIns" />
+
+    <TextView
+        android:id="@+id/textAddIns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/add_ins"
+        app:layout_constraintBottom_toTopOf="@+id/option_add_cream"
+        app:layout_constraintEnd_toEndOf="@+id/option_add_cream"
+        app:layout_constraintTop_toBottomOf="@+id/size" />
+
+    <CheckBox
+        android:id="@+id/option_add_syrup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="action_select_add_in"
+        android:text="@string/syrup"
+        app:layout_constraintBottom_toTopOf="@+id/option_add_milk"
+        app:layout_constraintStart_toStartOf="@+id/option_add_cream"
+        app:layout_constraintTop_toBottomOf="@+id/option_add_cream" />
+
+    <CheckBox
+        android:id="@+id/option_add_milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="action_select_add_in"
+        android:text="@string/milk"
+        app:layout_constraintBottom_toTopOf="@+id/option_add_caramel"
+        app:layout_constraintStart_toStartOf="@+id/option_add_syrup"
+        app:layout_constraintTop_toBottomOf="@+id/option_add_syrup" />
+
+    <CheckBox
+        android:id="@+id/option_add_caramel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="action_select_add_in"
+        android:text="@string/caramel"
+        app:layout_constraintBottom_toTopOf="@+id/option_add_whipped_cream"
+        app:layout_constraintStart_toStartOf="@+id/option_add_whipped_cream"
+        app:layout_constraintTop_toBottomOf="@+id/option_add_milk" />
+
+    <CheckBox
+        android:id="@+id/option_add_whipped_cream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:onClick="action_select_add_in"
+        android:text="@string/whipped_cream"
+        app:layout_constraintBottom_toTopOf="@+id/textQuantity"
+        app:layout_constraintStart_toStartOf="@+id/option_add_milk"
+        app:layout_constraintTop_toBottomOf="@+id/option_add_caramel" />
+
+    <NumberPicker
+        android:id="@+id/coffeeQuantity"
+        android:layout_width="67dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/textCoffeePrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textQuantity" />
+
+    <TextView
+        android:id="@+id/textQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/quantity"
+        app:layout_constraintBottom_toTopOf="@+id/coffeeQuantity"
+        app:layout_constraintStart_toStartOf="@+id/coffeeQuantity"
+        app:layout_constraintTop_toBottomOf="@+id/option_add_whipped_cream" />
+
+    <Button
+        android:id="@+id/btn_submit_coffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="41dp"
+        android:onClick="action_submit"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textCoffeePrice"
+        app:layout_constraintTop_toBottomOf="@+id/textCoffeePrice" />
+
+    <TextView
+        android:id="@+id/textCoffeePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:text="@string/subtotal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit_coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coffeeQuantity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
